@@ -50,9 +50,11 @@ class Intersector:
                         #print(word)
                         words_count[norm_form] += 1
         print(words_count)
-        with open(corpus_fold + '_result.txt', "w", encoding="utf-8") as writer:
-            writer.write(str(words_count))
-        writer.close()
+#         with open(corpus_fold + '_result.txt', "w", encoding="utf-8") as writer:
+        with open(corpus_fold + '_result.json', "w", encoding="utf-8") as writer:
+#             writer.write(str(words_count))
+            json.dump(words_count, writer, ensure_ascii=False)
+#         writer.close()
         return words_count
 
 
